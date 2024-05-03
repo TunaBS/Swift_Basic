@@ -33,3 +33,43 @@ It also ends with a line break.
 
 """
 print(lineBreaks)
+
+
+//special characters in string literals
+let wiseWords = "\"Imagination is more important than knowledge\" - Einstein"
+// "Imagination is more important than knowledge" - Einstein
+let dollarSign = "\u{24}"        // $,  Unicode scalar U+0024
+let blackHeart = "\u{2665}"      // ♥,  Unicode scalar U+2665
+let sparklingHeart = "\u{1F496}" // 💖, Unicode scalar U+1F496
+print(wiseWords, dollarSign, blackHeart, sparklingHeart)
+let threeDoubleQuotationMarks = """
+Escaping the first quotation mark \"""
+Escaping all three quotation marks \"\"\"
+"""
+print(threeDoubleQuotationMarks)
+
+//Extended String delimiers
+/*
+print(#"Line 1\nLine 2"#) //prints=========Line 1\nLine 2
+print("Line 1\nLine 2")   // prints line1 in one line and line 2 in another line
+print(#"Line 1\#nLine 2"#)  //output same as above one; different line
+let threeMoreDoubleQuotationMarks = #"""
+Here are three more double quotes: """
+"""#
+print(threeMoreDoubleQuotationMarks)*/
+
+//Initializing an empty String
+var emptyString = ""               // empty string literal
+var anotherEmptyString = String()  // initializer syntax
+// these two strings are both empty, and are equivalent to each other
+
+if emptyString.isEmpty {
+    print("Nothing to see here")
+}
+
+//String Mutability
+var variableString = "Horse"
+variableString += " and carriage" // variableString is now "Horse and carriage"
+print(variableString)
+let constantString = "Highlander"
+//constantString += " and another Highlander" //error ashbe
