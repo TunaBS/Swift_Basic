@@ -1,0 +1,90 @@
+/*
+print("Hello World")
+let b=10
+var a=5
+a=b
+print(a)
+
+var c = -9%4
+print(c)
+let three = 3
+let minusThree = -three       // minusThree equals -3
+print(minusThree)
+let plusThree = -minusThree
+print(plusThree)
+
+let name = "tuna"
+if name == "world" {
+    print("hello, world")
+} else {
+    print("I'm sorry \(name), but I don't recognize you")
+}
+
+print((2, "apple",4,5,"hello","world",2) < (2, "apple",4,5,"hello","worlds",2) )  // true because 1 is less than 2; "zebra" and "apple" aren't compared
+print((2, "apple") < (3, "bird") )   // true because 3 is equal to 3, and "apple" is less than "bird"
+print((3, "dog") == (4, "dog") )     // true because 4 is equal to 4, and "dog" is equal to "dog" */
+/*
+let contentHeight = 50
+let hasHeader = false
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+print(rowHeight) 
+let b=2, a=3
+print(a != nil ? a! : b)*/
+/*
+let defaultColorName = "red"
+var userDefinedColorName = "green"   // defaults to nil
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+print(colorNameToUse)*/
+/*
+//closed range operator
+for index in 1..<5 {
+    print("\(index) times 5 is \(index * 5)")
+}*/
+//half open range operator
+let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+print(count)
+/*
+for i in 0..<count {
+    print("Person \(i) is called \(names[i])")
+}
+
+//one sided range operator
+for name in names[1...] { //prints all values from index 1 to the last index
+    print(name)
+}
+for name in names[...2] { //prints all values form first index upto index 2
+    print(name)
+}
+for name in names[..<3] { //prints all elements from index 0 to less than index 3
+    print(name)
+}*/
+/*
+let range = 5...
+print(range.contains(7) )  // false
+print(range.contains(4) )  // true
+print(range.contains(-1) ) // true
+*/
+/*
+//logical not operator
+let allowedEntry = false
+if !allowedEntry {
+    print("ACCESS DENIED")
+}*/
+//logical and operator===========short circuit evaluation
+let enteredDoorCode = true
+let passedRetinaScan = true
+if enteredDoorCode && passedRetinaScan {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+
+//logical or operator
+let hasDoorKey = false
+let knowsOverridePassword = true
+if hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
