@@ -1,0 +1,62 @@
+// https://docs.swift.org/swift-book/documentation/the-swift-programming-language/functions
+//Defining and calling funcitons
+func sayHello(to name: String) { //2 variable names for a single variable
+    print("Hello, \(name)!")
+}
+sayHello(to: "Taylor")
+func greet(person: String) -> String {
+    let greeting = "Hello, " + person + "!"
+    return greeting
+}
+print(greet(person:"Tuna"))
+
+func greetAgain(person: String) -> String {
+    return "Hello again, " + person + "!"
+}
+print(greetAgain(person: "Tuna"))// Prints "Hello again, Anna!"
+//function without parameters
+func sayHelloWorld() -> String {
+    return "hello, world"
+}
+print(sayHelloWorld()) // Prints "hello, world"
+// funciton with multiple parameters
+
+func greet(person: String, alreadyGreeted: Bool) -> String {
+    if alreadyGreeted {
+        return greetAgain(person: person)
+    }
+    else {
+        return greet(person: person)
+    }
+}
+print(greet(person: "Tuna", alreadyGreeted: true)) //ekhane true/false kisu pass na korle by default FALSE dhore ney
+//function without return values
+/*func greet(person: String) {
+    print("Hello, \(person)!")
+}
+greet(person: "Wasy")*/
+func printAndCount(string: String) -> Int {
+    print(string)
+    return string.count
+}
+func printWithoutCounting(string: String) {
+    let _ = printAndCount(string: string)
+}
+print(printAndCount(string: "hello, world")) // prints "hello, world" and returns a value of 12
+print(printWithoutCounting(string: "hello, world")) // prints "hello, world" but doesn't return a value, print er vitor dile () print kore
+
+//function with multiple return value
+func minMax(array: [Int]) -> (min: Int, max: Int) {
+    var currentMin = array[0]
+    var currentMax = array[0]
+    for value in array[1..<array.count] {
+        if value < currentMin {
+            currentMin = value
+        } else if value > currentMax {
+            currentMax = value
+        }
+    }
+    return (currentMin, currentMax)
+}
+let range = minMax(array: [8, 10, -6, 109, 32, -1, -5, -15])
+print("Minimum value is \(range.min) and Maximum value is \(range.max)")
