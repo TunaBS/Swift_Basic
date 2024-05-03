@@ -1,0 +1,35 @@
+// https://docs.swift.org/swift-book/documentation/the-swift-programming-language/stringsandcharacters
+//string literals
+let someString = "Some string literal value"
+print(someString)
+//multiline strings
+let quotation = """
+The White Rabbit put on his spectacles.  "Where shall I begin,
+please your Majesty?" he asked.
+"Begin at the beginning," the King said gravely, "and go on
+till you come to the end; then stop."
+"""
+print(quotation)
+let singleLineString = "These are the same." //none of the following strings start or end with a line break
+let multilineString = """
+These are the same.
+"""
+print(singleLineString)
+print(multilineString)
+//blackslah dile string er vitore line break dekhabe na
+let softWrappedQuotation = """
+The White Rabbit put on his spectacles.  "Where shall I begin, \
+please your Majesty?" he asked.
+
+"Begin at the beginning," the King said gravely, "and go on \
+till you come to the end; then stop."
+"""
+print(softWrappedQuotation)
+
+let lineBreaks = """
+
+This string starts with a line break.
+It also ends with a line break.
+
+"""
+print(lineBreaks)
