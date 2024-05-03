@@ -1,3 +1,5 @@
+// https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators
+// https://www.programiz.com/swift-programming/operator-precedence-associativity
 /*
 print("Hello World")
 let b=10
