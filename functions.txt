@@ -60,3 +60,92 @@ func minMax(array: [Int]) -> (min: Int, max: Int) {
 }
 let range = minMax(array: [8, 10, -6, 109, 32, -1, -5, -15])
 print("Minimum value is \(range.min) and Maximum value is \(range.max)")
+
+//optional tuple return types 
+func minMax(array: [Int]) -> (min: Int, max: Int)? {
+    if array.isEmpty { return nil }
+    var currentMin = array[0]
+    var currentMax = array[0]
+    for value in array[1..<array.count] {
+        if value < currentMin {
+            currentMin = value
+        } else if value > currentMax {
+            currentMax = value
+        }
+    }
+    return (currentMin, currentMax)
+}
+if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
+    print("min is \(bounds.min) and max is \(bounds.max)")
+}
+//function with implicit return
+func greeting(to person: String) -> String {
+    "Hello, " + person + "!"
+}
+print(greeting(to: "Shabbir Ahmed Khan")) // Prints "Hello, Dave!"
+func anotherGreeting(to person: String) -> String {
+    return "Hello, " + person + "!"
+}
+print(anotherGreeting(to: "Shabbir Ahmed Khan")) // Prints "Hello, Dave!"
+//function argument labels and parameter names
+func someFunction(firstParameterName: Int, secondParameterName: Int) {
+    // In the function body, firstParameterName and secondParameterName refer to the argument values for the first and second parameters.
+}
+someFunction(firstParameterName: 1, secondParameterName: 2)
+
+//specifying argument labels
+func someFunction(argumentLabel parameterName: Int) {
+    // In the function body, parameterName refers to the argument value for that parameter.
+}
+func greet(person: String, from hometown: String) -> String {
+    return "Hello \(person)!  Glad you could visit from \(hometown)."
+}
+print(greet(person: "Bill", from: "farmgate"))
+//omitting argument labels
+func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
+    // In the function body, firstParameterName and secondParameterName// refer to the argument values for the first and second parameters.
+}
+someFunction(1, secondParameterName: 2)
+
+//variadic function
+func arithmeticMean(_ numbers: Double...) -> Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+print(arithmeticMean(1, 2, 3, 4, 5))// returns 3.0, which is the arithmetic mean of these five numbers
+print(arithmeticMean(3, 8.25, 18.75)) // returns 10.0, which is the arithmetic mean of these three numbers
+
+//in out parameters
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+var someInt = 3
+var anotherInt = 107
+swapTwoInts(&someInt, &anotherInt)
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)") // Prints "someInt is now 107, and anotherInt is now 3"
+//functions types
+func addTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
+func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a * b
+}
+func printHelloWorld() {
+    print("hello, world")
+}
+var mathFunction: (Int, Int) -> Int = addTwoInts
+print("Result: \(mathFunction(2, 3))") // Prints "Result: 5"
+mathFunction = multiplyTwoInts
+print("Result: \(mathFunction(2, 3))") // Prints "Result: 6"
+let anotherMathFunction = addTwoInts // anotherMathFunction is inferred to be of type (Int, Int) -> Int
+//function types as parameter types
+func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+    print("Result: \(mathFunction(a, b))")
+}
+printMathResult(addTwoInts, 3, 5)
+// Prints "Result: 8"
