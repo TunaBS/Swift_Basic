@@ -112,3 +112,36 @@ let goodStart = """
 
     """
 print(goodStart + end)
+
+//String interpolation
+
+let multiplier = 3
+let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
+print(message)
+print(#"Write an interpolated string in Swift using \(multiplier)."#)
+// Prints "Write an interpolated string in Swift using \(multiplier).
+print(#"6 times 7 is \#(6 * 7)."#)
+
+//Extended grapheme clusters
+let eAcute: Character = "\u{E9}"                         // é
+let combinedEAcute: Character = "\u{65}\u{301}"
+print(eAcute)
+print(combinedEAcute)
+let precomposed: Character = "\u{D55C}"                  // 한
+let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"
+print(precomposed)
+print(decomposed)
+let enclosedEAcute: Character = "\u{E9}\u{20DD}"
+print(enclosedEAcute)
+let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
+// regionalIndicatorForUS is 🇺🇸
+print(regionalIndicatorForUS)
+
+let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
+print("unusualMenagerie has \(unusualMenagerie.count) characters")
+// Prints "unusualMenagerie has 40 characters"
+var word = "cafe"
+print("the number of characters in \(word) is \(word.count)")
+// Prints "the number of characters in cafe is 4"
+word += "\u{301}"    // COMBINING ACUTE ACCENT, U+0301
+print("the number of characters in \(word) is \(word.count)")
