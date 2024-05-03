@@ -73,3 +73,42 @@ variableString += " and carriage" // variableString is now "Horse and carriage"
 print(variableString)
 let constantString = "Highlander"
 //constantString += " and another Highlander" //error ashbe
+
+
+//Working with character
+for character in "Dog!🐶" {
+    print(character)
+}
+
+let exclamationMark: Character = "!"
+print(exclamationMark)
+let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
+let catString = String(catCharacters)
+print(catString)
+
+//Concatenating String and Character
+let string1 = "hello"
+let string2 = " there"
+var welcome = string1 + string2
+print(welcome)
+var instruction = "look over"
+instruction += string2
+print(instruction)
+// let exclamationMark: Character = "!"
+welcome.append(exclamationMark)
+print(welcome) // welcome now equals "hello there!"
+
+let badStart = """
+    one
+    two
+    """
+let end = """
+    three
+    """
+print(badStart + end)
+let goodStart = """
+    one
+    two
+
+    """
+print(goodStart + end)
